@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task Manager</title>
+</head>
+<body>
+
+<h2>Task Manager</h2>
+
+<form method="POST" action="/add">
+    <input name="title" placeholder="Enter task">
+    <button type="submit">Add</button>
+</form>
+
+<ul>
+    {% for task in tasks %}
+        <li>
+            {{ task.title }}
+            <a href="/delete/{{ task.id }}">Delete</a>
+        </li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>
